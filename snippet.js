@@ -1,0 +1,1 @@
+!function(w,d,u){if(w.glyphway)return;var a=w.glyphway={_q:[]};"init capture identify setPersonProperties alias group reset register unregister optIn optOut flush".split(" ").forEach(function(m){a[m]=function(){a._q.push([m,[].slice.call(arguments)])}});var s=d.createElement("script");s.async=!0;s.src=u;d.head.appendChild(s)}(window,document,"YOUR_SCRIPT_ADDRESS");

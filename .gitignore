@@ -1,0 +1,12 @@
+
+# Common
+.DS_Store
+**/xcuserdata/
+node_modules/
+dist/
+__pycache__/
+*.pyc
+.dart_tool/
+build/
+**/Flutter/ephemeral/
+**/.flutter-plugins*

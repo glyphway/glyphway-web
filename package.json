@@ -1,0 +1,90 @@
+{
+  "name": "glyphway",
+  "version": "1.0.0",
+  "description": "Web SDK for the self-hosted Glyphway platform: capture, identity, sessions, autocapture, batching with a persistent queue.",
+  "homepage": "https://glyphway.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glyphway/glyphway-web.git"
+  },
+  "license": "MIT",
+  "author": "Zanaf Lab LLC (https://zanaflabs.com)",
+  "type": "module",
+  "sideEffects": false,
+  "module": "./dist/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "unpkg": "./dist/glyphway.js",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/index.mjs"
+    },
+    "./replay": {
+      "types": "./dist/types/replay-entry.d.ts",
+      "import": "./dist/replay.mjs"
+    },
+    "./core": {
+      "types": "./dist/types/core-entry.d.ts",
+      "import": "./dist/core.mjs"
+    },
+    "./exceptions": {
+      "types": "./dist/types/exceptions.d.ts",
+      "import": "./dist/exceptions.mjs"
+    },
+    "./vitals": {
+      "types": "./dist/types/vitals.d.ts",
+      "import": "./dist/vitals.mjs"
+    },
+    "./flags": {
+      "types": "./dist/types/flags.d.ts",
+      "import": "./dist/flags.mjs"
+    },
+    "./surveys": {
+      "types": "./dist/types/surveys.d.ts",
+      "import": "./dist/surveys.mjs"
+    },
+    "./messages": {
+      "types": "./dist/types/messages.d.ts",
+      "import": "./dist/messages.mjs"
+    },
+    "./push": {
+      "types": "./dist/types/push.d.ts",
+      "import": "./dist/push.mjs"
+    },
+    "./push-sw.js": "./push-sw.js",
+    "./nocode": {
+      "types": "./dist/types/nocode.d.ts",
+      "import": "./dist/nocode.mjs"
+    },
+    "./toolbar": {
+      "types": "./dist/types/toolbar.d.ts",
+      "import": "./dist/toolbar.mjs"
+    },
+    "./remote-config": {
+      "types": "./dist/types/remote-config.d.ts",
+      "import": "./dist/remote-config.mjs"
+    }
+  },
+  "files": [
+    "dist",
+    "push-sw.js",
+    "snippet.js"
+  ],
+  "scripts": {
+    "build": "node scripts/build.mjs && tsc -p tsconfig.build.json",
+    "size": "node scripts/size.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "pnpm typecheck && pnpm build && pnpm test && pnpm size"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "esbuild": "0.28.2",
+    "happy-dom": "21.0.4",
+    "rrweb": "2.1.7",
+    "typescript": "5.9.3",
+    "vitest": "4.1.12",
+    "web-vitals": "5.3.0"
+  }
+}
